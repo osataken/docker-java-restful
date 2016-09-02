@@ -11,6 +11,6 @@ public class GetHostNameController {
 
     @RequestMapping("/host")
     public String getHostName() throws UnknownHostException {
-        return InetAddress.getLocalHost().getHostName();
+        return InetAddress.getLocalHost().getHostName() + " " + System.currentTimeMillis();
     }
 }
