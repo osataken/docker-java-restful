@@ -7,4 +7,5 @@ ADD docker-springboot-restful-1.0-SNAPSHOT.jar .
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "docker-springboot-restful-1.0-SNAPSHOT.jar"]
+ENV JAVA_OPTS=""
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar docker-springboot-restful-1.0-SNAPSHOT.jar" ]
